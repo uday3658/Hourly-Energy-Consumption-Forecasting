@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# data & artifacts (regenerated, don't commit)
+data/raw/*.csv
+data/processed/*
+models/*.keras
+models/*.h5
+outputs/figures/*
+outputs/metrics.json
+
+# keep folders in git
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+!outputs/figures/.gitkeep

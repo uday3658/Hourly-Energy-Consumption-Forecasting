@@ -1,0 +1,36 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: data/raw
+  raw_data_path: data/raw/DOM_hourly.csv
+  source_url: https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption
+
+data_transformation:
+  root_dir: data/processed
+  input_data_path: data/raw/DOM_hourly.csv
+  transformed_data_path: data/processed/transformed_data.csv
+  target_column: DOM_MW
+  seq_len: 24
+  split_ratio: 0.8
+  scaler_path: data/processed/scaler.pkl
+
+model_training:
+  root_dir: models
+  training_data_path: data/processed/transformed_data.csv
+  rnn_model_path: models/rnn_model.keras
+  lstm_model_path: models/lstm_model.keras
+  params:
+    epochs: 10
+    batch_size: 64
+    units: 40
+    dropout: 0.15
+
+model_evaluation:
+  root_dir: outputs
+  input_data_path: data/processed/transformed_data.csv
+  rnn_model_path: models/rnn_model.keras
+  lstm_model_path: models/lstm_model.keras
+  scores_file_path: outputs/metrics.json
+  rnn_prediction_plot_path: outputs/figures/rnn_predictions.png
+  lstm_prediction_plot_path: outputs/figures/lstm_predictions.png
+  feature_importance_plot_path: outputs/figures/feature_importance.png
