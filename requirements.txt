@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 numpy
 pandas
 tensorflow
@@ -6,3 +7,11 @@ matplotlib
 scikit-learn
 joblib
 pyyaml
+=======
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.4
+matplotlib>=3.8
+tensorflow>=2.16
+streamlit>=1.35
+>>>>>>> bdda50590d72e4c2552d89f83bbb793628f17967
